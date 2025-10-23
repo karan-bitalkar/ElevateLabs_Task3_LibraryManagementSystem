@@ -16,7 +16,7 @@ public class Library {
         String author = sc.nextLine();
 
         books.add(new Book(id, title, author));
-        System.out.println("✅ Book added successfully!");
+        System.out.println(" Book added successfully!");
     }
 
     public void viewBooks() {
@@ -24,7 +24,7 @@ public class Library {
             System.out.println("No books available!");
             return;
         }
-        System.out.println("\n📚 List of Books:");
+        System.out.println("\n List of Books:");
         for (Book b : books) {
             System.out.println(b);
         }
@@ -38,7 +38,7 @@ public class Library {
         String name = sc.nextLine();
 
         users.add(new User(id, name));
-        System.out.println("✅ User added successfully!");
+        System.out.println(" User added successfully!");
     }
 
     public void issueBook() {
@@ -57,9 +57,9 @@ public class Library {
 
         if (foundBook != null) {
             foundBook.setIssued(true);
-            System.out.println("📘 Book issued successfully to User ID: " + userId);
+            System.out.println(" Book issued successfully to User ID: " + userId);
         } else {
-            System.out.println("❌ Book not found or already issued!");
+            System.out.println(" Book not found or already issued!");
         }
     }
 
@@ -70,11 +70,11 @@ public class Library {
         for (Book b : books) {
             if (b.getId() == bookId && b.isIssued()) {
                 b.setIssued(false);
-                System.out.println("✅ Book returned successfully!");
+                System.out.println(" Book returned successfully!");
                 return;
             }
         }
-        System.out.println("❌ Book not found or not issued!");
+        System.out.println(" Book not found or not issued!");
     }
 
     public static void main(String[] args) {
@@ -82,7 +82,7 @@ public class Library {
         Scanner sc = new Scanner(System.in);
         boolean running = true;
 
-        System.out.println("📚 Welcome to Library Management System 📚");
+        System.out.println(" Welcome to Library Management System ");
 
         while (running) {
             System.out.println("\nMenu:");
@@ -103,12 +103,13 @@ public class Library {
                 case 5 -> library.returnBook();
                 case 6 -> {
                     running = false;
-                    System.out.println("👋 Thank you for using Library Management System!");
+                    System.out.println(" Thank you for using Library Management System!");
                 }
-                default -> System.out.println("⚠️ Invalid choice! Try again.");
+                default -> System.out.println(" Invalid choice! Try again.");
             }
         }
 
         sc.close();
     }
 }
+
